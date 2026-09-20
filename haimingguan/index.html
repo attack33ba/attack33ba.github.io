@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海鸣馆-传统茶文化体验与茶道雅集中心</title>
+    <meta name="description" content="海鸣馆致力于传承与弘扬中华传统茶文化，提供高品质茶叶供应、茶道培训、文化雅集及商务茶会服务。探索茶之韵味，品味生活真谛。">
+    <meta name="keywords" content="海鸣馆, 茶馆, 茶文化, 茶道, 茶艺培训, 品茗, 茶叶">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a3b32; /* 深褐 - 历史感 */
+            --secondary-color: #8c7b70; /* 浅褐 - 温暖 */
+            --accent-color: #c0392b; /* 朱红 - 点缀 */
+            --bg-color: #fdfbf7; /* 米白 - 护眼纸张色 */
+            --text-color: #333333;
+            --text-light: #666666;
+            --border-radius: 4px;
+            --container-width: 1200px;
+            --header-height: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--header-height);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .btn-outline {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #3a2f26;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/tea_house_hero/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-hero {
+            background-color: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #fff;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-hero:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background-color: #f4f1ea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Tea Selection Section */
+        .tea-selection {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+
+        .tea-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .tea-card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+        }
+
+        .tea-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .tea-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .tea-info {
+            padding: 20px;
+        }
+
+        .tea-tag {
+            display: inline-block;
+            font-size: 12px;
+            padding: 2px 8px;
+            background-color: #eee;
+            color: var(--text-light);
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+
+        .tea-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .tea-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .tea-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .tea-price {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* Culture & Events Section */
+        .culture-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .culture-layout {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .culture-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .culture-image img {
+            border-radius: var(--border-radius);
+            box-shadow: 20px 20px 0 var(--secondary-color);
+        }
+
+        .culture-content {
+            flex: 1;
+        }
+
+        .culture-content h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .culture-list {
+            margin-top: 30px;
+        }
+
+        .culture-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .culture-item h4 {
+            font-size: 18px;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .culture-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* About/Intro Section */
+        .about-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b231e;
+            color: #aaa;
+            padding: 60px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #3d322b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .culture-layout {
+                flex-direction: column;
+            }
+
+            .culture-image img {
+                box-shadow: 10px 10px 0 var(--secondary-color);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">茗</span>
+                海鸣馆
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#products">茶品鉴赏</a></li>
+                    <li><a href="#services">茶道服务</a></li>
+                    <li><a href="#events">雅集活动</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-outline">预约茶会</a>
+                <a href="#products" class="btn btn-primary">选购茶叶</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>海鸣馆 · 慢煮时光，静品茶香</h1>
+                <p>在喧嚣都市中寻找一片宁静，体验正统中式茶道的韵味与智慧。</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-hero">了解茶文化</a>
+                    <a href="#contact" class="btn btn-hero">预约体验</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>我们的宗旨</h2>
+                    <p>海鸣馆不仅是一个喝茶的地方，更是一个传播东方生活美学的精神家园。</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-item">
+                        <div class="feature-icon">🌿</div>
+                        <h3>源头好茶</h3>
+                        <p>严选福建、云南、浙江等核心产区名优茶，坚持原产地直采，确保每一片叶子的鲜活与纯粹。</p>
+                    </article>
+                    <article class="feature-item">
+                        <div class="feature-icon">🍵</div>
+                        <h3>专业茶艺</h3>
+                        <p>资深茶艺师团队，提供专业的冲泡指导与品鉴服务，带您领略茶汤的色香味形之美。</p>
+                    </article>
+                    <article class="feature-item">
+                        <div class="feature-icon">🏮</div>
+                        <h3>雅集空间</h3>
+                        <p>古色古香的装修风格，融合新中式美学，是商务洽谈、朋友聚会、独处静心的理想场所。</p>
+                    </article>
+                    <article class="feature-item">
+                        <div class="feature-icon">📜</div>
+                        <h3>文化传承</h3>
+                        <p>定期举办茶道讲座与茶艺培训班，致力于传统文化的保护、继承与传播。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tea Products Section -->
+        <section id="products" class="tea-selection">
+            <div class="container">
+                <div class="section-header">
+                    <h2>精选茶品</h2>
+                    <p>每一款茶都有其独特的性格，等待懂茶之人来发现。</p>
+                </div>
+                <div class="tea-grid">
+                    <article class="tea-card">
+                        <img src="https://picsum.photos/seed/tea1/400/300" alt="武夷大红袍" class="tea-img">
+                        <div class="tea-info">
+                            <span class="tea-tag">岩茶</span>
+                            <h3 class="tea-title">武夷大红袍</h3>
+                            <p class="tea-desc">香气馥郁，有兰花香，滋味醇厚回甘，岩韵明显。</p>
+                            <div class="tea-footer">
+                                <span class="tea-price">¥280/50g</span>
+                                <a href="#" class="btn btn-outline" style="padding: 4px 12px; font-size: 12px;">购买</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tea-card">
+                        <img src="https://picsum.photos/seed/tea2/400/300" alt="西湖龙井" class="tea-img">
+                        <div class="tea-info">
+                            <span class="tea-tag">绿茶</span>
+                            <h3 class="tea-title">西湖龙井</h3>
+                            <p class="tea-desc">色绿、香郁、味甘、形美，四绝俱全，春茶佳品。</p>
+                            <div class="tea-footer">
+                                <span class="tea-price">¥350/50g</span>
+                                <a href="#" class="btn btn-outline" style="padding: 4px 12px; font-size: 12px;">购买</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tea-card">
+                        <img src="https://picsum.photos/seed/tea3/400/300" alt="云南普洱" class="tea-img">
+                        <div class="tea-info">
+                            <span class="tea-tag">黑茶</span>
+                            <h3 class="tea-title">云南普洱熟茶</h3>
+                            <p class="tea-desc">汤色红浓明亮，陈香显著，暖胃养胃，越陈越香。</p>
+                            <div class="tea-footer">
+                                <span class="tea-price">¥198/饼</span>
+                                <a href="#" class="btn btn-outline" style="padding: 4px 12px; font-size: 12px;">购买</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tea-card">
+                        <img src="https://picsum.photos/seed/tea4/400/300" alt="安溪铁观音" class="tea-img">
+                        <div class="tea-info">
+                            <span class="tea-tag">乌龙茶</span>
+                            <h3 class="tea-title">安溪铁观音</h3>
+                            <p class="tea-desc">七泡有余香，兰花香型高扬，口感顺滑，回甘持久。</p>
+                            <div class="tea-footer">
+                                <span class="tea-price">¥220/50g</span>
+                                <a href="#" class="btn btn-outline" style="padding: 4px 12px; font-size: 12px;">购买</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture & Events Section -->
+        <section id="services" class="culture-section">
+            <div class="container">
+                <div class="culture-layout">
+                    <div class="culture-image">
+                        <img src="https://picsum.photos/seed/tea_ceremony/600/450" alt="茶道雅集">
+                    </div>
+                    <div class="culture-content">
+                        <h2>茶道服务与雅集</h2>
+                        <p>海鸣馆定期举办各类茶文化活动，无论是初学者还是资深茶友，都能在这里找到属于自己的乐趣。</p>
+                        
+                        <div class="culture-list">
+                            <div class="culture-item">
+                                <div class="feature-icon" style="width: 40px; height: 40px; margin: 0; font-size: 18px;">🎓</div>
+                                <div>
+                                    <h4>茶艺师考证培训</h4>
+                                    <p>系统学习茶叶知识、冲泡技巧及服务礼仪，颁发国家认证证书。</p>
+                                </div>
+                            </div>
+                            <div class="culture-item">
+                                <div class="feature-icon" style="width: 40px; height: 40px; margin: 0; font-size: 18px;">🎁</div>
+                                <div>
+                                    <h4>定制茶礼服务</h4>
+                                    <p>提供企业商务伴手礼、节日礼品盒定制服务，包装精美，寓意深远。</p>
+                                </div>
+                            </div>
+                            <div class="culture-item">
+                                <div class="feature-icon" style="width: 40px; height: 40px; margin: 0; font-size: 18px;">🍵</div>
+                                <div>
+                                    <h4>商务茶会洽谈</h4>
+                                    <p>私密包间，专业茶艺服务，为您的商务洽谈营造轻松雅致的氛围。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <a href="#contact" class="btn btn-primary">预约服务</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container about-content">
+                <h2>海鸣馆 · 传承</h2>
+                <p>始于对一杯好茶的执着，成于对传统文化的敬畏。海鸣馆成立于2010年，始终秉承“正本清源，回归自然”的理念，致力于为都市人提供一方可以安放身心的净土。</p>
+                <a href="#contact" class="btn btn-hero">联系我们</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>海鸣馆 Haiming Hall</h4>
+                    <p>地址：中国上海市静安区南京西路1266号恒隆广场5楼</p>
+                    <p>电话：021-12345678</p>
+                    <p>邮箱：contact@haiminghall.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">回到首页</a></li>
+                        <li><a href="#products">茶叶商城</a></li>
+                        <li><a href="#services">茶艺课程</a></li>
+                        <li><a href="#events">活动预告</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>茶类导航</h4>
+                    <ul>
+                        <li><a href="#">绿茶</a></li>
+                        <li><a href="#">红茶</a></li>
+                        <li><a href="#">乌龙茶</a></li>
+                        <li><a href="#">白茶</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p>获取最新茶品资讯与活动信息。</p>
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <div style="width: 30px; height: 30px; background: #444; border-radius: 50%;"></div>
+                        <div style="width: 30px; height: 30px; background: #444; border-radius: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 海鸣馆 版权所有 | 沪ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
