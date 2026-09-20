@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风流岁月之活色生香 第 - 沉浸式言情小说阅读平台</title>
+    <meta name="description" content="风流岁月之活色生香 第 - 提供正版连载小说、精彩章节试读、人物关系图及读者社区互动。探索那段跨越时光的深情往事，感受文字中的极致浪漫与生活百态。">
+    <meta name="keywords" content="风流岁月之活色生香 第, 网络小说, 沉浸式阅读, 言情小说, 在线连载">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --primary-dark: #b08968;
+            --bg-color: #fdfcf8;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+            --accent-red: #c0392b;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-dark);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #fdfcf8 0%, #e6e6fa 100%);
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero-content .subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background: rgba(212, 163, 115, 0.2);
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background-image: url('https://picsum.photos/seed/novel_cover/600/400');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* Chapter List Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: var(--text-main);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .chapter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .chapter-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .chapter-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .chapter-num {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-dark);
+            min-width: 60px;
+        }
+
+        .chapter-title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .chapter-meta {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .chapter-action {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Character Section */
+        .character-section {
+            background: #fff;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .char-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .char-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+            border: 3px solid var(--primary-color);
+        }
+
+        .char-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .char-role {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .info-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f5f5f5;
+        }
+
+        .synopsis p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .data-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .data-label {
+            color: var(--text-light);
+        }
+
+        .data-value {
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #95a5a6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .tags {
+                justify-content: center;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .chapter-action {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>📖</span> 流金岁月
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#chapters">章节目录</a></li>
+                <li><a href="#characters">人物档案</a></li>
+                <li><a href="#info">作品详情</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-outline">登录</button>
+            <button class="btn btn-primary">收藏作品</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>风流岁月之活色生香 第</h1>
+                <div class="tags">
+                    <span class="tag">都市情感</span>
+                    <span class="tag">豪门恩怨</span>
+                    <span class="tag">治愈系</span>
+                </div>
+                <p class="subtitle">一段被时光掩埋的往事，一段关于爱、成长与救赎的旅程。在繁华的都市霓虹下，看他们如何书写属于自己的风流岁月。</p>
+                <div style="display: flex; gap: 15px;">
+                    <button class="btn btn-primary" style="padding: 12px 30px; font-size: 16px;">开始阅读</button>
+                    <button class="btn btn-outline" style="padding: 12px 30px; font-size: 16px;">加入书架</button>
+                </div>
+            </div>
+            <div class="hero-image"></div>
+        </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section id="chapters" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">最新章节</h2>
+                <a href="#" style="color: var(--primary-color); font-weight: 500;">查看全部章节 &rarr;</a>
+            </div>
+            
+            <div class="chapter-list">
+                <article class="chapter-item">
+                    <div class="chapter-info">
+                        <span class="chapter-num">第 128 章</span>
+                        <div>
+                            <h3 class="chapter-title">旧地重游，往事如烟</h3>
+                            <span class="chapter-meta">更新于 2023-10-24 | 字数 3,200</span>
+                        </div>
+                    </div>
+                    <a href="#" class="chapter-action">阅读 &rarr;</a>
+                </article>
+
+                <article class="chapter-item">
+                    <div class="chapter-info">
+                        <span class="chapter-num">第 127 章</span>
+                        <div>
+                            <h3 class="chapter-title">意外的重逢</h3>
+                            <span class="chapter-meta">更新于 2023-10-22 | 字数 2,850</span>
+                        </div>
+                    </div>
+                    <a href="#" class="chapter-action">阅读 &rarr;</a>
+                </article>
+
+                <article class="chapter-item">
+                    <div class="chapter-info">
+                        <span class="chapter-num">第 126 章</span>
+                        <div>
+                            <h3 class="chapter-title">风雨欲来</h3>
+                            <span class="chapter-meta">更新于 2023-10-20 | 字数 3,100</span>
+                        </div>
+                    </div>
+                    <a href="#" class="chapter-action">阅读 &rarr;</a>
+                </article>
+
+                <article class="chapter-item">
+                    <div class="chapter-info">
+                        <span class="chapter-num">第 125 章</span>
+                        <div>
+                            <h3 class="chapter-title">暗流涌动</h3>
+                            <span class="chapter-meta">更新于 2023-10-18 | 字数 2,950</span>
+                        </div>
+                    </div>
+                    <a href="#" class="chapter-action">阅读 &rarr;</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="characters" class="section character-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">主要人物</h2>
+            </div>
+            <div class="char-grid">
+                <div class="char-card">
+                    <div class="char-avatar" style="background-image: url('https://picsum.photos/seed/char1/200/200');"></div>
+                    <h3 class="char-name">林婉儿</h3>
+                    <p class="char-role">女主角 | 温柔坚韧的职场精英</p>
+                </div>
+                <div class="char-card">
+                    <div class="char-avatar" style="background-image: url('https://picsum.photos/seed/char2/200/200');"></div>
+                    <h3 class="char-name">顾长风</h3>
+                    <p class="char-role">男主角 | 沉稳内敛的商业巨鳄</p>
+                </div>
+                <div class="char-card">
+                    <div class="char-avatar" style="background-image: url('https://picsum.photos/seed/char3/200/200');"></div>
+                    <h3 class="char-name">苏小雅</h3>
+                    <p class="char-role">配角 | 活泼可爱的邻家女孩</p>
+                </div>
+                <div class="char-card">
+                    <div class="char-avatar" style="background-image: url('https://picsum.photos/seed/char4/200/200');"></div>
+                    <h3 class="char-name">赵天宇</h3>
+                    <p class="char-role">反派 | 阴险狡诈的竞争对手</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section id="info" class="section">
+        <div class="container info-grid">
+            <div class="info-card synopsis">
+                <h3>作品简介</h3>
+                <p>《风流岁月之活色生香》讲述了一个发生在上世纪九十年代至今的跨越时空的爱情故事。女主角林婉儿在一次偶然的机会下，发现了一本尘封的日记，日记的主人竟然是她从未谋面的曾祖母。随着日记内容的展开，一段段被时光掩埋的秘密逐渐浮出水面。</p>
+                <p>故事从繁华的上海滩开始，穿越到改革开放的浪潮中，再到如今的国际化大都市。林婉儿在追寻真相的过程中，不仅揭开了家族的恩怨情仇，也重新认识了身边的顾长风。两人在风雨中相互扶持，在诱惑中坚守初心，共同谱写了一段关于爱与成长的传奇篇章。</p>
+                <p>本书风格细腻写实，情感描写真挚动人，既有都市生活的快节奏与高压，也有人物内心深处的柔软与渴望。无论您是喜欢历史厚重感的读者，还是偏爱现代都市情感剧的粉丝，都能在这部作品中找到共鸣。</p>
+            </div>
+            <aside class="info-card">
+                <h3>作品数据</h3>
+                <ul class="data-list">
+                    <li><span class="data-label">作品状态</span><span class="data-value">连载中</span></li>
+                    <li><span class="data-label">总字数</span><span class="data-value">约 450,000</span></li>
+                    <li><span class="data-label">连载天数</span><span class="data-value">365 天</span></li>
+                    <li><span class="data-label">推荐票</span><span class="data-value">12,580</span></li>
+                    <li><span class="data-label">收藏数</span><span class="data-value">8,900</span></li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>阅读指南</h4>
+                <ul>
+                    <li><a href="#">新人福利</a></li>
+                    <li><a href="#">充值中心</a></li>
+                    <li><a href="#">VIP特权</a></li>
+                    <li><a href="#">书架管理</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">都市言情</a></li>
+                    <li><a href="#">古代言情</a></li>
+                    <li><a href="#">悬疑推理</a></li>
+                    <li><a href="#">历史传记</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p style="color: #95a5a6; font-size: 14px; margin-bottom: 10px;">扫描二维码关注微信公众号，第一时间获取最新章节更新。</p>
+                <div style="width: 120px; height: 120px; background: #fff; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #333; font-size: 12px;">
+                    QR Code
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 流金岁月阅读网 版权所有. 保留所有权利.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+                                          </html>
