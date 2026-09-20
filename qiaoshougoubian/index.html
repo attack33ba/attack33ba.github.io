@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巧手钩编-创意编织图解与零基础教程</title>
+    <meta name="description" content="巧手钩编专注于提供精美的钩针图解、棒针教程及编织灵感。从新手入门到大师进阶，提供详细步骤图解、线材选择建议及成品展示，助您轻松完成每一件手作。">
+    <meta name="keywords" content="巧手钩编, 钩针图解, 棒针教程, 手工编织, 零基础钩针, 编织图解下载">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B5E3C;
+            --secondary-color: #D4A373;
+            --accent-color: #E9EDC9;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #FAF9F6;
+            --bg-card: #FFFFFF;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(139, 94, 60, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            font-size: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn-outline {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #6d4c2f;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbf7 0%, #e9edc9 100%);
+            padding: 60px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            padding-right: 50px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Categories */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Tutorial Cards */
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(139, 94, 60, 0.15);
+        }
+
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .difficulty {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: var(--accent-color);
+            color: #555;
+        }
+
+        .difficulty.difficulty-hard {
+            background-color: #ffefef;
+            color: #d32f2f;
+        }
+
+        .difficulty.difficulty-easy {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .btn-link {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Material Guide */
+        .material-section {
+            background-color: #fff;
+        }
+
+        .material-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .material-list h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .material-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .material-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .material-text h4 {
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .material-text p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .material-img {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .faq-item h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .material-container {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>✂️</span> 巧手钩编
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">图解教程</a></li>
+                    <li><a href="#">线材选购</a></li>
+                    <li><a href="#">编织工具</a></li>
+                    <li><a href="#">成品展示</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">发布图解</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>用一根钩针，编织无限温暖</h1>
+                <p>海量免费钩针与棒针图解，从零基础入门到进阶作品，为您提供详尽的编织指南与灵感。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索图解，例如：钩针杯垫、棒针毛衣...">
+                    <button type="button">🔍</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="category-grid">
+                    <a href="#" class="category-card">
+                        <span class="category-icon">🧶</span>
+                        <h3>基础针法</h3>
+                    </a>
+                    <a href="#" class="category-card">
+                        <span class="category-icon">🧣</span>
+                        <h3>围巾帽子</h3>
+                    </a>
+                    <a href="#" class="category-card">
+                        <span class="category-icon">🧥</span>
+                        <h3>毛衣开衫</h3>
+                    </a>
+                    <a href="#" class="category-card">
+                        <span class="category-icon">🧤</span>
+                        <h3>手套袜套</h3>
+                    </a>
+                    <a href="#" class="category-card">
+                        <span class="category-icon">👜</span>
+                        <h3>包包挂件</h3>
+                    </a>
+                    <a href="#" class="category-card">
+                        <span class="category-icon">🏠</span>
+                        <h3>家居装饰</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Tutorials -->
+        <section class="section" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门图解推荐</h2>
+                    <p>精选本周最受欢迎的编织教程，适合不同水平的编织爱好者</p>
+                </div>
+                <div class="tutorial-grid">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">热门</span>
+                            <img src="https://picsum.photos/seed/crochet1/400/300" alt="复古风钩针杯垫">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>钩针入门</span>
+                                <span>1.2k 次浏览</span>
+                            </div>
+                            <h3 class="card-title">复古风几何纹钩针杯垫制作教程</h3>
+                            <p class="card-desc">简单易懂的短针与长针组合，适合新手练习，成品精致耐用，为您的茶具增添一份文艺气息。</p>
+                            <div class="card-footer">
+                                <span class="difficulty difficulty-easy">难度：简单</span>
+                                <a href="#" class="btn-link">查看详情 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">进阶</span>
+                            <img src="https://picsum.photos/seed/crochet2/400/300" alt="日系毛衣编织">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>棒针编织</span>
+                                <span>856 次浏览</span>
+                            </div>
+                            <h3 class="card-title">日系宽松棒针开衫毛衣图解</h3>
+                            <p class="card-desc">经典的麻花纹理设计，宽松版型不挑身材。包含详细的加减针说明与花样编织图解。</p>
+                            <div class="card-footer">
+                                <span class="difficulty difficulty-medium">难度：中等</span>
+                                <a href="#" class="btn-link">查看详情 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">新品</span>
+                            <img src="https://picsum.photos/seed/crochet3/400/300" alt="猫咪玩偶钩织">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>玩偶制作</span>
+                                <span>2.3k 次浏览</span>
+                            </div>
+                            <h3 class="card-title">可爱猫咪玩偶钩针制作指南</h3>
+                            <p class="card-desc">通过简单的环形起针与填充技巧，制作出毛茸茸的猫咪玩偶，送给宠物爱好者或作为手作礼物。</p>
+                            <div class="card-footer">
+                                <span class="difficulty difficulty-easy">难度：简单</span>
+                                <a href="#" class="btn-link">查看详情 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">实用</span>
+                            <img src="https://picsum.photos/seed/crochet4/400/300" alt="收纳筐编织">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>收纳整理</span>
+                                <span>670 次浏览</span>
+                            </div>
+                            <h3 class="card-title">北欧风钩针收纳筐编织教程</h3>
+                            <p class="card-desc">大容量设计，可放置衣物或杂物。采用空心长针编织，结实耐用且透气，家居收纳必备。</p>
+                            <div class="card-footer">
+                                <span class="difficulty difficulty-medium">难度：中等</span>
+                                <a href="#" class="btn-link">查看详情 →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materials & Tools -->
+        <section class="section material-section">
+            <div class="container">
+                <div class="material-container">
+                    <div class="material-list">
+                        <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                            <h2>必备编织材料与工具</h2>
+                            <p>工欲善其事，必先利其器。了解如何选择合适的线材与工具，是成功完成作品的第一步。</p>
+                        </div>
+                        <div class="material-item">
+                            <div class="material-icon">🧵</div>
+                            <div class="material-text">
+                                <h4>选择合适的毛线</h4>
+                                <p>根据作品用途选择材质，如棉线适合家居，羊毛线适合保暖，腈纶线适合新手练习。</p>
+                            </div>
+                        </div>
+                        <div class="material-item">
+                            <div class="material-icon">🪡</div>
+                            <div class="material-text">
+                                <h4>钩针尺寸与型号</h4>
+                                <p>不同粗细的钩针搭配不同粗细的毛线，通常遵循一定的比例关系，具体请参考线材包装说明。</p>
+                            </div>
+                        </div>
+                        <div class="material-item">
+                            <div class="material-icon">📏</div>
+                            <div class="material-text">
+                                <h4>测量工具的使用</h4>
+                                <p>学会测量围度与长度，使用软尺辅助调整尺寸，确保成品合身。</p>
+                            </div>
+                        </div>
+                        <div class="material-item">
+                            <div class="material-icon">🧼</div>
+                            <div class="material-text">
+                                <h4>线材养护指南</h4>
+                                <p>钩织完成后的清洗与保养方法，延长手作寿命，保持织物柔软蓬松。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-img">
+                        <img src="https://picsum.photos/seed/yarn/600/400" alt="编织材料展示">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>新手常见问题</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>零基础完全看不懂图解怎么办？</h4>
+                        <p>建议先从“基础针法”分类下的入门教程开始学习，掌握短针、长针等基础符号的含义，多练习几次即可上手。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>钩针起针总是松怎么办？</h4>
+                        <p>起针时可以适当拉紧线圈，或者使用锁针起针法作为基础。练习时注意手腕的力度控制，保持均匀。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何判断编织作品的尺寸？</h4>
+                        <p>建议在编织过程中每隔几行进行测量，特别是围巾、帽子等需要合身的产品，避免织完才发现尺寸不对。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>不同品牌的毛线可以混用吗？</h4>
+                        <p>不建议随意混用。不同品牌的毛线粗细、吸水性及弹性差异较大，混用可能导致成品效果不佳。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于巧手钩编</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">
+                        专注于手工编织爱好者的分享平台。我们致力于提供高质量的图解教程、实用的编织知识和温暖的社区氛围，让更多人感受手作的乐趣。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">热门图解</a></li>
+                        <li><a href="#">新手入门</a></li>
+                        <li><a href="#">线材推荐</a></li>
+                        <li><a href="#">工具百科</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>常见问题</h4>
+                    <ul>
+                        <li><a href="#">如何下载图解？</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>订阅更新</h4>
+                    <p style="font-size: 13px; margin-bottom: 10px;">获取最新图解与教程推送</p>
+                    <div style="display: flex;">
+                        <input type="email" placeholder="您的邮箱" style="padding: 8px; border: none; border-radius: 4px 0 0 4px; width: 100%;">
+                        <button style="padding: 8px 12px; background: var(--primary-color); color: white; border: none; border-radius: 0 4px 4px 0; cursor: pointer;">订阅</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 巧手钩编网. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
