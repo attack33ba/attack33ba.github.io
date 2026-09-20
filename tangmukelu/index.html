@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汤姆克鲁斯好看的电影-精选经典动作巨制与观影指南</title>
+    <meta name="description" content="本站汇集汤姆克鲁斯最受欢迎的好看电影，包括碟中谍系列、壮志凌云、末日之战等经典动作巨制。提供影片简介、评分参考、观看渠道及观影指南，助您重温硬汉魅力。">
+    <meta name="keywords" content="汤姆克鲁斯,汤姆克鲁斯好看的电影,碟中谍,壮志凌云,汤姆克鲁斯电影推荐">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --dark-bg: #141414;
+            --card-bg: #1f1f1f;
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --accent-blue: #46d369;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #333;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .view-all {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .view-all:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(20, 20, 20, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .search-icon {
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            background: linear-gradient(to top, var(--dark-bg) 10%, transparent 90%), url('https://picsum.photos/seed/movies/1920/1080') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #b20710;
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .movie-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-poster {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            background-color: #333;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .rating {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        /* Featured Section (Sidebar) */
+        .featured-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .featured-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            height: 400px;
+        }
+
+        .featured-image {
+            width: 50%;
+            object-fit: cover;
+        }
+
+        .featured-info {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-tag {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .featured-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Lists & Rankings */
+        .ranking-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .ranking-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            align-items: center;
+        }
+
+        .rank-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #333;
+            width: 40px;
+            text-align: center;
+        }
+
+        .rank-num.top-3 {
+            color: var(--primary-color);
+        }
+
+        .rank-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .rank-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: #1a1a1a;
+            padding: 4rem 0;
+            margin-top: 2rem;
+        }
+
+        .guide-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .guide-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .guide-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .check-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .check-list li::before {
+            content: '✔';
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        .guide-image {
+            width: 100%;
+            height: 400px;
+            background-color: #333;
+            border-radius: 8px;
+            background-image: url('https://picsum.photos/seed/actor/800/800');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 0.85rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .featured-section {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card {
+                height: auto;
+                flex-direction: column;
+            }
+
+            .featured-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .guide-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">Tom<span>Cruise</span>精选</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#series">系列电影</a></li>
+                    <li><a href="#rankings">排行榜</a></li>
+                    <li><a href="#guide">观影指南</a></li>
+                </ul>
+            </nav>
+            <div class="search-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">年度必看</span>
+                <h1>重温硬汉魅力<br>汤姆·克鲁斯好看的电影</h1>
+                <p>从《碟中谍》的极限惊险到《壮志凌云》的顶级视效，探索汤姆·克鲁斯最具代表性的动作巨制与经典角色。</p>
+                <div class="hero-buttons">
+                    <a href="#series" class="btn btn-primary">开始观影</a>
+                    <a href="#guide" class="btn btn-secondary">了解他的电影生涯</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Action Series Section -->
+        <section id="series" class="section-padding">
+            <div class="section-header">
+                <h2 class="section-title">硬核动作系列</h2>
+                <a href="#" class="view-all">查看全部系列 &rarr;</a>
+            </div>
+            
+            <div class="movie-grid">
+                <!-- Movie Card 1 -->
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/mi/300/450" alt="碟中谍海报" class="card-poster">
+                    <div class="card-content">
+                        <h3 class="card-title">碟中谍7：致命清算（上）</h3>
+                        <div class="card-meta">
+                            <span>2022</span>
+                            <span class="rating">8.5</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 2 -->
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/mission/300/450" alt="碟中谍6海报" class="card-poster">
+                    <div class="card-content">
+                        <h3 class="card-title">碟中谍6：全面瓦解</h3>
+                        <div class="card-meta">
+                            <span>2018</span>
+                            <span class="rating">8.8</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 3 -->
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/topgun/300/450" alt="壮志凌云2海报" class="card-poster">
+                    <div class="card-content">
+                        <h3 class="card-title">壮志凌云2：独行侠</h3>
+                        <div class="card-meta">
+                            <span>2022</span>
+                            <span class="rating">8.4</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 4 -->
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/war/300/450" alt="壮志凌云1海报" class="card-poster">
+                    <div class="card-content">
+                        <h3 class="card-title">壮志凌云</h3>
+                        <div class="card-meta">
+                            <span>1986</span>
+                            <span class="rating">8.3</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 5 -->
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/jobs/300/450" alt="乔布斯海报" class="card-poster">
+                    <div class="card-content">
+                        <h3 class="card-title">乔布斯</h3>
+                        <div class="card-meta">
+                            <span>2015</span>
+                            <span class="rating">7.9</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 6 -->
+                <article class="movie-card">
+                    <img src="https://picsum.photos/seed/jack/300/450" alt="最后的武士海报" class="card-poster">
+                    <div class="card-content">
+                        <h3 class="card-title">最后的武士</h3>
+                        <div class="card-meta">
+                            <span>2003</span>
+                            <span class="rating">8.1</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featured & Ranking -->
+        <section class="featured-section">
+            <!-- Featured Article -->
+            <article class="featured-card">
+                <img src="https://picsum.photos/seed/mi8/800/600" alt="碟中谍8概念图" class="featured-image">
+                <div class="featured-info">
+                    <span class="featured-tag">深度解析</span>
+                    <h2 class="featured-title">为何《碟中谍》系列至今仍是汤姆·克鲁斯最成功的商业作品？</h2>
+                    <p class="featured-desc">从伊森·亨特这个角色诞生之初，汤姆·克鲁斯就坚持亲自完成所有高难度特技。本文将回顾系列的发展历程，分析其长盛不衰的原因。</p>
+                    <a href="#" class="btn btn-secondary">阅读全文</a>
+                </div>
+            </article>
+
+            <!-- Ranking List -->
+            <aside id="rankings">
+                <div class="section-header" style="border-bottom: none; padding-bottom: 0;">
+                    <h2 class="section-title" style="font-size: 1.5rem;">口碑Top5</h2>
+                </div>
+                <div class="ranking-list">
+                    <div class="ranking-item">
+                        <span class="rank-num top-3">1</span>
+                        <div class="rank-info">
+                            <h3>壮志凌云：独行侠</h3>
+                            <p>动作 / 冒险 / 热血</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-num top-3">2</span>
+                        <div class="rank-info">
+                            <h3>碟中谍6：全面瓦解</h3>
+                            <p>动作 / 惊悚 / 犯罪</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-num top-3">3</span>
+                        <div class="rank-info">
+                            <h3>明日边缘</h3>
+                            <p>科幻 / 动作 / 爆米花</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-num">4</span>
+                        <div class="rank-info">
+                            <h3>壮志凌云</h3>
+                            <p>动作 / 爱情 / 剧情</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <span class="rank-num">5</span>
+                        <div class="rank-info">
+                            <h3>遗落战境</h3>
+                            <p>科幻 / 动作 / 悬疑</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <div class="guide-content">
+                    <div class="guide-text">
+                        <h3>如何选择汤姆·克鲁斯的好看电影？</h3>
+                        <p>汤姆·克鲁斯的电影作品跨度极大，从早期的喜剧风格到后来的极致动作片。为了帮助您找到最适合当下心情的影片，我们整理了以下观影建议。</p>
+                        <ul class="check-list">
+                            <li><strong>追求视觉震撼：</strong> 首选《碟中谍》系列或《壮志凌云2》，IMAX格式体验最佳。</li>
+                            <li><strong>喜欢深度角色：</strong> 推荐《最后的武士》或《壮志凌云》，展现了他内敛的一面。</li>
+                            <li><strong>周末轻松娱乐：</strong> 《杰森一家》或《香草天空》是不错的选择。</li>
+                        </ul>
+                        <br>
+                        <a href="#" class="btn btn-primary">查看完整片单</a>
+                    </div>
+                    <div class="guide-image"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">Tom<span>Cruise</span>精选</div>
+                    <p style="color: #777; font-size: 0.9rem;">
+                        专注于收录汤姆·克鲁斯最具代表性的电影作品，提供最准确的影片信息和观影指南。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门系列</h4>
+                    <ul>
+                        <li><a href="#">碟中谍系列</a></li>
+                        <li><a href="#">壮志凌云</a></li>
+                        <li><a href="#">明日边缘</a></li>
+                        <li><a href="#">遗落战境</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Tom Cruise Movie Guide. All Rights Reserved. 
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
