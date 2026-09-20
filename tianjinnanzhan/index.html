@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="天津南站公交出行指南，提供天津南站公交车站点查询、公交线路信息、首末班车时间、换乘攻略及周边交通枢纽详情，助您轻松规划公共交通路线。">
+    <meta name="keywords" content="天津南站公交, 天津南站公交车站, 天津南站公交线路, 天津南站公交换乘, 天津南站交通">
+    <title>天津南站公交-公交车站点查询与换乘出行指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --accent-color: #00a0e9;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f4f6f9;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 5px 15px;
+            align-items: center;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 5px;
+            font-size: 14px;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .quick-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 30px;
+        }
+
+        /* Station Map Section */
+        .station-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .station-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .route-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .route-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .route-item:hover {
+            border-color: var(--primary-color);
+            background-color: #f0f7ff;
+        }
+
+        .route-badge {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 15px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .route-details {
+            flex-grow: 1;
+        }
+
+        .route-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .route-time {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .route-desc {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .tip-box {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .tip-title {
+            font-weight: 700;
+            color: #856404;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tip-content {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 15px;
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 15px 15px;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            border-top: 1px solid #f0f0f0;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .search-box {
+                width: 100%;
+                margin-top: 10px;
+            }
+            .search-box input {
+                width: 100%;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                天津公交指南
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">站点查询</a></li>
+                    <li><a href="#">线路大全</a></li>
+                    <li><a href="#">换乘方案</a></li>
+                    <li><a href="#">实时到站</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="输入线路或站点...">
+                <button type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>天津南站公交出行指南</h1>
+                <p>为您提供天津南站周边最新公交线路信息、首末班车时刻表及换乘攻略，让您的出行更加便捷高效。</p>
+                <div class="quick-actions">
+                    <button class="btn btn-primary" onclick="document.getElementById('bus-list').scrollIntoView({behavior: 'smooth'})">查看线路</button>
+                    <button class="btn btn-outline">下载时刻表</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Main Content -->
+            <section class="main-content">
+                
+                <!-- Station Overview -->
+                <article class="station-card">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            天津南站公交站概况
+                        </h2>
+                    </div>
+                    <div class="station-info-grid">
+                        <div class="info-item">
+                            <div class="info-label">所属区域</div>
+                            <div class="info-value">津南区</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">服务时段</div>
+                            <div class="info-value">全天运营</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">途经站点数</div>
+                            <div class="info-value">约12条线路</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">附近地标</div>
+                            <div class="info-value">天津南站</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-gray); margin-bottom: 20px;">
+                        天津南站公交站位于天津市津南区，紧邻天津南站交通枢纽，是连接市区与滨海新区的重要换乘节点。该站覆盖了多条通往市区的主干公交线路，是前往海河教育园区、梅江会展中心及市区核心商圈的必经之路。
+                    </p>
+                </article>
+
+                <!-- Bus Routes List -->
+                <article class="station-card" id="bus-list">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                            途经公交线路
+                        </h2>
+                        <span style="font-size: 0.9rem; color: var(--text-gray);">点击查看详情</span>
+                    </div>
+                    
+                    <div class="route-list">
+                        <!-- Route 1 -->
+                        <div class="route-item">
+                            <div class="route-badge">地铁6号线</div>
+                            <div class="route-details">
+                                <div class="route-name">地铁6号线 (梅林路站 - 浩天路站)</div>
+                                <div class="route-time">运营时间：06:00 - 22:30</div>
+                                <div class="route-desc">连接海河教育园区与市区核心区，可换乘1号线、5号线及津滨轻轨。</div>
+                            </div>
+                        </div>
+
+                        <!-- Route 2 -->
+                        <div class="route-item">
+                            <div class="route-badge">公交 196路</div>
+                            <div class="route-details">
+                                <div class="route-name">公交 196路 (咸水沽公交站 - 天津站后广场)</div>
+                                <div class="route-time">首班 06:00 | 末班 20:00</div>
+                                <div class="route-desc">直达天津站，途经陈塘庄、下瓦房等繁华地段，是前往火车站的首选线路。</div>
+                            </div>
+                        </div>
+
+                        <!-- Route 3 -->
+                        <div class="route-item">
+                            <div class="route-badge">公交 713路</div>
+                            <div class="route-details">
+                                <div class="route-name">公交 713路 (咸水沽公交站 - 李七庄南站)</div>
+                                <div class="route-time">运营时间：06:00 - 19:30</div>
+                                <div class="route-desc">主要服务津南城区至西青李七庄方向的通勤客流，途经咸水沽中心区。</div>
+                            </div>
+                        </div>
+
+                        <!-- Route 4 -->
+                        <div class="route-item">
+                            <div class="route-badge">公交 808路</div>
+                            <div class="route-details">
+                                <div class="route-name">公交 808路 (咸水沽公交站 - 营口道)</div>
+                                <div class="route-time">运营时间：06:00 - 20:00</div>
+                                <div class="route-desc">连接海河教育园区与和平区，途经文化中心、小白楼等区域。</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tips & Info -->
+                <article class="station-card">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                            出行贴士
+                        </h2>
+                    </div>
+                    <ul style="display: grid; gap: 15px;">
+                        <li style="display: flex; gap: 10px;">
+                            <span style="color: var(--primary-color);">•</span>
+                            <span>地铁6号线天津南站站与公交枢纽紧密相连，出站即换乘，无需步行过马路。</span>
+                        </li>
+                        <li style="display: flex; gap: 10px;">
+                            <span style="color: var(--primary-color);">•</span>
+                            <span>早晚高峰期间，196路、808路等线路进站时间较长，建议预留充足候车时间。</span>
+                        </li>
+                        <li style="display: flex; gap: 10px;">
+                            <span style="color: var(--primary-color);">•</span>
+                            <span>前往梅江会展中心建议乘坐713路至“柳林路”站换乘，避开拥堵路段。</span>
+                        </li>
+                        <li style="display: flex; gap: 10px;">
+                            <span style="color: var(--primary-color);">•</span>
+                            <span>支持使用天津公交APP或微信“天津公交”小程序扫码乘车，部分线路支持电子月票。</span>
+                        </li>
+                    </ul>
+                </article>
+
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="tip-box">
+                    <div class="tip-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        换乘推荐
+                    </div>
+                    <div class="tip-content">
+                        <p style="margin-bottom: 8px;">从天津南站前往市区：</p>
+                        <p>首选 <strong>地铁6号线</strong> 至 <strong>文化中心站</strong> 换乘1号线，直达和平区、南开区。</p>
+                        <p style="margin-top: 8px;">前往滨海新区：</p>
+                        <p>可换乘 <strong>津滨轻轨9号线</strong> 至 <strong>中山门站</strong>。</p>
+                    </div>
+                </div>
+
+                <div class="station-card">
+                    <div class="section-header">
+                        <h2 class="section-title">常见问题 (FAQ)</h2>
+                    </div>
+                    
+                    <div class="faq-item" onclick="this.classList.toggle('active')">
+                        <div class="faq-question">
+                            天津南站公交站有哪些夜间线路？
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            目前主要运营至20:00左右的线路包括196路、808路等。建议出站后直接乘坐地铁6号线，该线路运营至22:30，是夜间出行的最佳选择。
+                        </div>
+                    </div>
+
+                    <div class="faq-item" onclick="this.classList.toggle('active')">
+                        <div class="faq-question">
+                            如何从公交站前往高铁站进站口？
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            公交站位于高铁站东侧，出站后步行距离约300米，设有地下通道连接，非常方便。
+                        </div>
+                    </div>
+
+                    <div class="faq-item" onclick="this.classList.toggle('active')">
+                        <div class="faq-question">
+                            周围有停车场吗？
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            天津南站站前广场及地下车库提供充足的停车服务，适合自驾前往后换乘公交或地铁的旅客。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="station-card" style="background: #e3f2fd; border: none;">
+                    <div class="section-title" style="color: #0d47a1;">实时路况</div>
+                    <p style="font-size: 0.9rem; color: #1565c0;">
+                        当前津港公路车流量正常，通行顺畅。
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="#">网站介绍</a></li>
+                    <li><a href="#">数据来源</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>服务导航</h3>
+                <ul>
+                    <li><a href="#">天津地铁图</a></li>
+                    <li><a href="#">公交实时查询</a></li>
+                    <li><a href="#">定制公交</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>帮助中心</h3>
+                <ul>
+                    <li><a href="#">乘车指南</a></li>
+                    <li><a href="#">票价政策</a></li>
+                    <li><a href="#">失物招领</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 天津公交出行指南网 版权所有 | 本站信息仅供参考，具体以实际运营为准
+        </div>
+    </footer>
+
+</body>
+                      </html>
