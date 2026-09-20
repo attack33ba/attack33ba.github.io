@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="聊城网 - 聊城本地资讯、新闻热点、生活服务与便民信息发布平台。提供聊城新闻、房产、招聘、二手交易及城市生活指南。">
+    <meta name="keywords" content="聊城网, 聊城新闻, 聊城资讯, 聊城生活, 聊城房产, 聊城招聘, 聊城便民">
+    <title>聊城网-聊城本地资讯与便民生活服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --primary-hover: #b71c1c;
+            --secondary-color: #f5f5f5;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --border-color: #e0e0e0;
+            --white: #ffffff;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --radius: 4px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            font-size: 14px;
+            color: var(--text-main);
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header & Top Bar */
+        .top-bar {
+            background-color: #333;
+            color: #ccc;
+            font-size: 12px;
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-links a {
+            margin-left: 15px;
+            color: #ccc;
+        }
+
+        .top-links a:hover {
+            color: var(--white);
+        }
+
+        .header-main {
+            background: var(--white);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            padding: 20px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: normal;
+            margin-left: 5px;
+            color: var(--text-secondary);
+        }
+
+        .search-box {
+            display: flex;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            width: 400px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .search-box button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-bar .container {
+            display: flex;
+        }
+
+        .nav-menu {
+            display: flex;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 14px 20px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu li a:hover, .nav-menu li a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--white);
+            margin: 20px 0;
+            padding: 20px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .hero-banner {
+            position: relative;
+            height: 400px;
+            background-color: #eee;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-banner-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 30px 20px;
+            color: var(--white);
+        }
+
+        .hero-banner-text h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .hero-banner-text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .hero-side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hot-news-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 15px;
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a.more {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        .hot-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .hot-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hot-list li a {
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .hot-list li a:hover {
+            color: var(--primary-color);
+        }
+
+        .hot-list li .tag {
+            display: inline-block;
+            background-color: #ffebee;
+            color: var(--primary-color);
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 2px;
+            margin-right: 5px;
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Section Styles */
+        .content-section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .news-item {
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .news-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .news-img {
+            height: 180px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-info {
+            padding: 15px;
+        }
+
+        .news-info h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-info p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styles */
+        .sidebar-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category-list a {
+            display: inline-block;
+            padding: 5px 12px;
+            background-color: var(--secondary-color);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .category-list a:hover, .category-list a.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .notice-list {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .notice-list li {
+            margin-bottom: 8px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .notice-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .service-item {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        .service-item span {
+            font-size: 12px;
+            color: var(--text-main);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2b2b2b;
+            color: #999;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid, .main-content, .news-grid, .service-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-banner {
+                grid-column: span 2;
+                height: 300px;
+            }
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+            .header-main .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .search-box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid, .main-content, .news-grid, .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-banner {
+                grid-column: span 1;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .top-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="time">今天是：2023年10月27日 星期五</div>
+            <div class="top-links">
+                <a href="#">设为首页</a>
+                <a href="#">收藏本站</a>
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-main">
+        <div class="container">
+            <a href="#" class="logo">
+                聊城网<span>Local Life</span>
+            </a>
+            <div class="search-box">
+                <input type="text" placeholder="请输入搜索关键词，如：东昌湖、房产、招聘...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">聊城新闻</a></li>
+                <li><a href="#">房产楼市</a></li>
+                <li><a href="#">汽车服务</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">二手交易</a></li>
+                <li><a href="#">同城活动</a></li>
+                <li><a href="#">便民服务</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-banner">
+                    <img src="https://picsum.photos/seed/liaocheng1/800/400" alt="东昌湖美景">
+                    <div class="hero-banner-text">
+                        <h2>东昌湖畔秋色正浓，聊城全域旅游迎来新高峰</h2>
+                        <p>近日，聊城市旅游局发布数据显示，随着秋意渐浓，东昌湖景区及周边乡村旅游点游客量显著提升...</p>
+                    </div>
+                </div>
+                <div class="hero-side">
+                    <div class="hot-news-card">
+                        <div class="section-title">
+                            今日头条
+                            <a href="#" class="more">更多 ></a>
+                        </div>
+                        <ul class="hot-list">
+                            <li><a href="#"><span class="tag">政务</span>聊城市政府发布关于推进城市更新行动的实施意见</a></li>
+                            <li><a href="#"><span class="tag">民生</span>聊城新开通两条公交线路，方便市民出行</a></li>
+                            <li><a href="#"><span class="tag">教育</span>聊城一中、二中高考成绩再创新高，一本上线率稳居全省前列</a></li>
+                            <li><a href="#"><span class="tag">交通</span>聊城西站今日起实施新的列车运行图，班次增加15%</a></li>
+                            <li><a href="#"><span class="tag">经济</span>聊城高新区签约三个重大项目，总投资额超50亿元</a></li>
+                        </ul>
+                    </div>
+                    <div class="hot-news-card" style="flex: 0 0 auto; height: 160px;">
+                        <div class="section-title">
+                            城市生活
+                            <a href="#" class="more">更多 ></a>
+                        </div>
+                        <ul class="hot-list">
+                            <li><a href="#">聊城老城区改造最新进展：三条街道即将通车</a></li>
+                            <li><a href="#">冬季供暖准备就绪，聊城热力集团启动试运行</a></li>
+                            <li><a href="#">聊城美食地图：本地人推荐的十家老字号小吃</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Left Column: News Feed -->
+            <div class="content-column">
+                <div class="content-section">
+                    <div class="section-title">
+                        最新资讯
+                        <a href="#" class="more">查看全部 ></a>
+                    </div>
+                    <div class="news-grid">
+                        <article class="news-item">
+                            <div class="news-img">
+                                <img src="https://picsum.photos/seed/news1/400/300" alt="新闻配图">
+                            </div>
+                            <div class="news-info">
+                                <h3><a href="#">聊城市举办第十届非物质文化遗产博览会</a></h3>
+                                <p>博览会现场汇聚了来自全市各地的传统手工艺品，展示了聊城深厚的文化底蕴...</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-img">
+                                <img src="https://picsum.photos/seed/news2/400/300" alt="新闻配图">
+                            </div>
+                            <div class="news-info">
+                                <h3><a href="#">聊城新建两处口袋公园，市民休闲有了好去处</a></h3>
+                                <p>为提升城市绿化水平，改善居民生活环境，市园林处近日完成了两处口袋公园的建设...</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-img">
+                                <img src="https://picsum.photos/seed/news3/400/300" alt="新闻配图">
+                            </div>
+                            <div class="news-info">
+                                <h3><a href="#">聊城交警发布秋季交通安全出行提示</a></h3>
+                                <p>进入秋季，天气变化较大，道路湿滑，交警部门提醒广大驾驶员注意行车安全...</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-img">
+                                <img src="https://picsum.photos/seed/news4/400/300" alt="新闻配图">
+                            </div>
+                            <div class="news-info">
+                                <h3><a href="#">聊城：深化“放管服”改革，优化营商环境</a></h3>
+                                <p>我市在行政审批流程优化、政务服务效率提升等方面取得了显著成效，企业开办时间大幅压缩...</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-img">
+                                <img src="https://picsum.photos/seed/news5/400/300" alt="新闻配图">
+                            </div>
+                            <div class="news-info">
+                                <h3><a href="#">聊城高校科研成果转化成效显著，多项技术填补省内空白</a></h3>
+                                <p>聊城大学与多家企业达成产学研合作协议，推动了一批高新技术成果在本地落地转化...</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-img">
+                                <img src="https://picsum.photos/seed/news6/400/300" alt="新闻配图">
+                            </div>
+                            <div class="news-info">
+                                <h3><a href="#">聊城冬季取暖费开始缴纳，缴费指南请查收</a></h3>
+                                <p>市热力公司提醒广大市民，2023-2024年度采暖费缴纳工作已全面启动，请及时缴纳...</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar-column">
+                <!-- Categories -->
+                <div class="sidebar-card">
+                    <div class="section-title">热门分类</div>
+                    <div class="category-list">
+                        <a href="#" class="active">全部</a>
+                        <a href="#">本地新闻</a>
+                        <a href="#">房产楼市</a>
+                        <a href="#">汽车资讯</a>
+                        <a href="#">求职招聘</a>
+                        <a href="#">二手市场</a>
+                        <a href="#">教育培训</a>
+                        <a href="#">同城交友</a>
+                    </div>
+                </div>
+
+                <!-- Government Notice -->
+                <div class="sidebar-card">
+                    <div class="section-title">政务公告</div>
+                    <ul class="notice-list">
+                        <li><a href="#">聊城市关于划定高排放机动车限行区域的通告</a></li>
+                        <li><a href="#">聊城市住房公积金管理中心关于调整公积金贷款政策的通知</a></li>
+                        <li><a href="#">聊城市2023年中小学招生计划及学区划分公布</a></li>
+                        <li><a href="#">关于规范市区道路停车收费管理的公告</a></li>
+                        <li><a href="#">聊城市公安局关于打击整治网络谣言的警示</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="sidebar-card">
+                    <div class="section-title">便民服务</div>
+                    <div class="service-grid">
+                        <div class="service-item">
+                            <div class="service-icon">🏠</div>
+                            <span>房产信息</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🚗</div>
+                            <span>车辆服务</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">💼</div>
+                            <span>求职招聘</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🛒</div>
+                            <span>二手交易</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advertisement Placeholder -->
+                <div class="sidebar-card" style="text-align: center; padding: 20px 0;">
+                    <div style="background: #eee; height: 250px; display: flex; align-items: center; justify-content: center; color: #999; border: 1px dashed #ccc;">
+                        广告位招租
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>聊城网</h3>
+                    <p style="font-size: 13px; line-height: 1.8; color: #999;">
+                        聊城网是聊城市最具影响力的本地生活资讯服务平台，致力于为用户提供最及时、最全面、最真实的聊城本地新闻、房产、招聘、二手交易及生活服务信息。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">版权声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门频道</h4>
+                    <ul>
+                        <li><a href="#">聊城新闻</a></li>
+                        <li><a href="#">房产楼市</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                        <li><a href="#">二手市场</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">抖音号</a></li>
+                        <li><a href="#">用户反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 聊城网 版权所有 | ICP备XXXXXXXX号</p>
+                <p style="margin-top: 5px;">本站内容均来源于网络或网友投稿，如有侵权请联系我们处理。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                  </html>
